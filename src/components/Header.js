@@ -9,7 +9,6 @@ import { addUser,removeUser } from '../utils/UserSlice';
 const Header = () => {
   const dispatch =useDispatch()
   const user=useSelector(store=>store.user)
-  console.log(user);
 
 
   const navigate=useNavigate()
@@ -29,7 +28,7 @@ const Header = () => {
   useEffect(()=>{
     console.log("use Effect called");
     
-    onAuthStateChanged(auth, (user) => {
+   const unsubscribe= onAuthStateChanged(auth, (user) => {
       if (user) {
         // sign in/sign up cases
         const {uid,email,displayName} = user
@@ -42,7 +41,9 @@ const Header = () => {
         navigate("/")
       }
     });
-    
+
+// unsubscribe when component unmounts
+    return ()=>unsubscribe();
   },[])
 
 
