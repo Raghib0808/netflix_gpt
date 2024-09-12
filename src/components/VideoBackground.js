@@ -33,13 +33,15 @@ const VideoBackground = ({movieID}) => {
 <iframe
   width="789"
   height="330"
-  src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&autohide=1`}
+  src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&autohide=1&loop=1&playlist=${trailerVideo?.key}&showinfo=0&disablekb=1`}
   title="Inside Out 2 | Official Trailer"
   frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   referrerPolicy="strict-origin-when-cross-origin"
   allowFullScreen
 ></iframe>
+
+
 
       
     </div>

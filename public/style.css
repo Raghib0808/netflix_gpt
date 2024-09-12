@@ -51,3 +51,7 @@
     height: 100%;
     aspect-ratio: 16/9;
 }
+
+::-webkit-scrollbar{
+    width: 0;
+}
